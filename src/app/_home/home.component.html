@@ -1,0 +1,120 @@
+<div class="wrapper">
+  <div class="box">
+    <div class="content">
+      <form action="" [formGroup]="form" (ngSubmit)="_onSubmit()">
+        <h1>Help Protect Your Home with a New Security System</h1>
+        <h5>
+          Quick and easy , Get matched with the best Home Security company in
+          your area.
+        </h5>
+        <div class="item">
+          <select name="" id="" formControlName="property_type" class="select">
+            <option class="mutted" disabled selected>
+              What type of property is this system for ?
+            </option>
+            <option value="owned">Owned</option>
+            <option value="rented">Rented</option>
+          </select>
+          <input
+            type="text"
+            placeholder="Enter Zip Code"
+            formControlName="zip_code"
+            (input)="onInputChange($event)"
+          />
+          <input type="text" placeholder="Enter City" formControlName="city" />
+          <input
+            type="text"
+            placeholder="Enter State"
+            formControlName="state"
+          />
+          <select
+            name=""
+            id=""
+            formControlName="installation_preference"
+            class="select"
+          >
+            <option disabled selected>
+              What is your installation preference?
+            </option>
+            <option value="Self installation">Self installation</option>
+            <option value="No preference">No preference</option>
+          </select>
+          <select name="" id="" formControlName="features" class="select">
+            <option disabled selected>
+              What home security features would you like to have?
+            </option>
+            <option value="camera">Cameras</option>
+            <option value="Motion Sensors">Motion Sensors</option>
+            <option value="Glass break sensors">Glass break sensors</option>
+            <option value="Doorbell Cameras">Doorbell Cameras</option>
+          </select>
+          <select name="" id="" formControlName="system_type" class="select">
+            <option disabled selected>What kind of System do you need?</option>
+            <option value="Burglar / intrusion">Burglar / intrusion</option>
+            <option value="Fire detection">Fire detection</option>
+            <option value="Both burglar and fire detection">
+              Both burglar and fire detection
+            </option>
+          </select>
+          <select name="" formControlName="entrances" id="" class="select">
+            <option disabled selected>How many entrances exist?</option>
+            <option value="1">1</option>
+            <option value="2-4">2-4</option>
+            <option value="5">5</option>
+            <option value="More than 5">More than 5</option>
+          </select>
+          <input
+            type="text"
+            placeholder="Enter an address"
+            formControlName="address"
+            (input)="onInputChange($event)"
+          />
+          <input
+            type="text"
+            placeholder="First Name"
+            formControlName="first_name"
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            formControlName="last_name"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            formControlName="email_address"
+          />
+          <input
+            type="number"
+            placeholder="Phone"
+            formControlName="phone_home"
+          />
+          <div class="button">
+            <button [disabled]="form.invalid">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="how-it-work-section">
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">
+        <h1>How It Works</h1>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>
+        Safe Home Pros services hundreds of brands and provides trusted
+        information for millions of individuals across the United States
+      </p>
+      <p>- Easily compare competitors</p>
+      <p>- Strengthen your consumer awareness</p>
+      <p>- Find the best rates for your financial needs</p>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <app-footer></app-footer>
+</div>
