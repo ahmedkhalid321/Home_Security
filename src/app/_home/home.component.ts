@@ -77,9 +77,21 @@ export class HomeComponent implements OnInit {
     formData.append('features', this.form.get('features')?.value);
     formData.append('system_type', this.form.get('system_type')?.value);
     formData.append('entrances', this.form.get('entrances')?.value);
-    if (this.isValidEmail && this.isValidPhoneNumber) {
-      this._leadHelper._addLeadDetail(formData);
-      this.form.reset();
+    this._leadHelper._addLeadDetail(formData);
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Add Successfully',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    setTimeout(() => {
+      location.reload();
+
+    },500)
+    if (this.isValidEmail || this.isValidPhoneNumber) {
+      location.reload();
+    this._leadHelper._addLeadDetail(formData);
       Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -89,6 +101,7 @@ export class HomeComponent implements OnInit {
       })
     }
   }
+
   _validateEmail() {
     const emailToValidate = this.form.get('email_address')?.value;
     if (emailToValidate) {

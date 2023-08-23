@@ -12,6 +12,7 @@ export class LeadService {
   constructor(private http:HttpClient) { }
 
   _addLeadDetail(data:FormData):Observable<Lead> {
+    debugger
     return this.http.post<Lead>(`${environment.BASEURL}`,data);
   }
 }
